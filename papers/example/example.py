@@ -9,8 +9,10 @@ father_path = os.path.abspath(os.path.dirname(current_path) + os.path.sep + ".")
 
 def plot():
     # Write the relative path from the name of this file
-    save_path = "example.pdf"
-    save_path = os.path.join(father_path, save_path)
+    relative_save_path = "example.pdf"
+
+
+    save_path = os.path.join(father_path, relative_save_path)
 
     fig = plt.figure(figsize=(6, .65))
     # ax = plt.subplot(111, frameon=False, aspect=.1)
@@ -25,4 +27,5 @@ def plot():
                  orientation="horizontal")
 
     plt.savefig(save_path)
-    return save_path
+
+    return relative_save_path

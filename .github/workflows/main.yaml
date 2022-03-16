@@ -3,12 +3,6 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  pre-commit:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-      - uses: pre-commit/action@v2.0.0
   build:
     runs-on: ubuntu-20.04
     steps:
