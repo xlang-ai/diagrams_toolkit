@@ -17,7 +17,8 @@ for paper_dir in os.listdir(PAPERS_DIR):
     for plot_dir in os.listdir(os.path.join(PAPERS_DIR, paper_dir)):
         if plot_dir.endswith(".py"):
             figure_path = importlib.import_module("papers.{}.{}".format(paper_dir, plot_dir.split('.')[0])).plot()
-            all_plots.append({"figure_path": "{}/{}".format(URL, figure_path), "code_path": "{}/papers/{}/{}".format(URL, paper_dir, plot_dir), "paper": paper_dir})
+            all_plots.append({"figure_path": "{}/papers/{}/{}/{}".format(URL, paper_dir, plot_dir, figure_path),
+                              "code_path": "{}/papers/{}/{}".format(URL, paper_dir, plot_dir), "paper": paper_dir})
         elif plot_dir.endswith(".tex"):
             pass
         else:
@@ -26,6 +27,10 @@ for paper_dir in os.listdir(PAPERS_DIR):
 HEADER = "| Figure | Code Source | Paper |\n|  ----  | ----  | ----  |"
 ROWS = []
 for plot_info in all_plots:
-    ROWS.append("""| <a href="{}">  <img src="{}"  width="170" /></a> | [code]({}) | {} |""".format(plot_info['figure_path'], plot_info['figure_path'], plot_info['code_path'], plot_info['paper']))
+    ROWS.append(
+        """| <a href="{}">  <img src="{}"  width="170" /></a> | [code]({}) | {} |""".format(plot_info['figure_path'],
+                                                                                            plot_info['figure_path'],
+                                                                                            plot_info['code_path'],
+                                                                                            plot_info['paper']))
 
 print("{}\n\n{}\n{}".format(README_STR, HEADER, '\n'.join(ROWS)))
