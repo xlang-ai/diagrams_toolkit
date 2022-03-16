@@ -42,6 +42,8 @@ jobs:
       - name: Refresh README.md
         run: |
           python make_readme.py > README.md
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add .
           git commit -m "Create diagram and make refresh README"
           git push
