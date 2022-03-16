@@ -18,7 +18,7 @@ for paper_dir in os.listdir(PAPERS_DIR):
         if plot_dir.endswith(".py"):
             figure_path = importlib.import_module("papers.{}.{}".format(paper_dir, plot_dir.split('.')[0])).plot()
             all_plots.append({"figure_path": "{}/papers/{}/{}/{}".format(URL, paper_dir, plot_dir, figure_path),
-                              "code_path": "{}/papers/{}/{}".format(URL, paper_dir, plot_dir), "paper": paper_dir})
+                              "code_path": "{}/blob/main/papers/{}/{}".format(URL, paper_dir, plot_dir), "paper": paper_dir})
         elif plot_dir.endswith(".tex"):
             pass
         else:
