@@ -28,6 +28,6 @@ for paper_dir in os.listdir(PAPERS_DIR):
 HEADER = "| Figure | Code Source | Paper |\n|  ----  | ----  | ----  |"
 ROWS = []
 for plot_info in all_plots:
-    ROWS.append("""| <a href="{}">  <img src="{}"  width="170" /></a> | (code)[{}] | {} |""".format(plot_info['figure_path'], plot_info['figure_path'], plot_info['code_path'], plot_info['paper']))
+    ROWS.append("""| <a href="{}">  <img src="{}"  width="170" /></a> | [code]({}) | {} |""".format(plot_info['figure_path'], plot_info['figure_path'], plot_info['code_path'], plot_info['paper']))
 
 print("{}\n\n{}\n{}".format(README_STR, HEADER, '\n'.join(ROWS)))
