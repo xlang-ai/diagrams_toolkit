@@ -9,8 +9,7 @@ father_path = os.path.abspath(os.path.dirname(current_path) + os.path.sep + ".")
 
 def plot():
     # Write the relative path from the name of this file
-    relative_save_path = "example.pdf"
-
+    relative_save_path = "example.png"
 
     save_path = os.path.join(father_path, relative_save_path)
 
