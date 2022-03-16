@@ -1,0 +1,47 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - uses: pre-commit/action@v2.0.0
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install \
+            fontconfig    \
+            imagemagick   \
+            libgeos++-dev \
+            libproj-dev   \
+            poppler-utils
+          python -m pip install --upgrade pip
+          pip install -r requirements/requirements.txt
+      - name: Install Tex Live
+        run: |
+          sudo apt update
+          sudo apt install \
+            texlive-base              \
+            texlive-extra-utils       \
+            texlive-fonts-extra       \
+            texlive-fonts-recommended \
+            texlive-latex-base        \
+            texlive-latex-extra       \
+            texlive-latex-recommended \
+            texlive-xetex
+      - name: Refresh README.md
+        run: |
+          python make_readme.py > README.md
+          git add .
+          git commit -m "Create diagram and make refresh README"
+          git push
