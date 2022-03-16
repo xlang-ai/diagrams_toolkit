@@ -19,10 +19,8 @@ for paper_dir in os.listdir(PAPERS_DIR):
             figure_path = importlib.import_module("papers.{}.{}".format(paper_dir, plot_dir.split('.')[0])).plot()
             all_plots.append({"figure_path": "{}/{}".format(URL, figure_path), "code_path": "{}/papers/{}/{}".format(URL, paper_dir, plot_dir), "paper": paper_dir})
         elif plot_dir.endswith(".tex"):
-            print(".{} type not supported yet!".format(plot_dir.split(".")[-1]))
             pass
         else:
-            print(".{} type not supported yet!".format(plot_dir.split(".")[-1]))
             pass
 
 HEADER = "| Figure | Code Source | Paper |\n|  ----  | ----  | ----  |"
