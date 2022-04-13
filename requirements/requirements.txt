@@ -66,6 +66,8 @@ markupsafe==2.1.0
     # via jinja2
 matplotlib==3.5.0
     # via -r requirements.in
+seaborn
+    # via -r requirements.in
 mccabe==0.6.1
     # via flake8
 mpl-sphinx-theme==3.5.0
