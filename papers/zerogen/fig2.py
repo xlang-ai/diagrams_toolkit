@@ -15,7 +15,7 @@ def plot():
     save_path = os.path.join(father_path, relative_save_path)
 
 
-    plt.rcParams['text.usetex'] = True
+    # plt.rcParams['text.usetex'] = True
     # matplotlib.rcParams.update({'font.size': 4})
     # sns.set_style('whitegrid')
     sns.set()
