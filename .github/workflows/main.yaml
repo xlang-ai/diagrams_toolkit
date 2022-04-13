@@ -24,8 +24,7 @@ jobs:
       - name: Install Tex Live
         run: |
           pip install latex
-          sudo apt-get install dvipng
-          sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
+          sudo apt-get install dvipng texlive-latex-extra texlive-fonts-recommended cm-super
       - name: Refresh README.md
         run: |
           python make_readme.py > README.md
