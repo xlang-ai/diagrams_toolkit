@@ -22,17 +22,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements/requirements.txt
       - name: Install Tex Live
-        run: |
-          sudo apt update
-          sudo apt install \
-            texlive-base              \
-            texlive-extra-utils       \
-            texlive-fonts-extra       \
-            texlive-fonts-recommended \
-            texlive-latex-base        \
-            texlive-latex-extra       \
-            texlive-latex-recommended \
-            texlive-xetex
+        run:
+          pip install latex
+          sudo apt-get install dvipng
+          sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
       - name: Refresh README.md
         run: |
           python make_readme.py > README.md
