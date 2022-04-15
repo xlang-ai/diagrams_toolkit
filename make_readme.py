@@ -3,7 +3,11 @@ import importlib
 
 URL = "https://github.com/HKUNLP/diagrams_toolkit"
 README_STR = """# diagrams_toolkit
- Source code for diagrams in the paper of HKU NLPers."""
+ Source code for diagrams in the paper of HKU NLPers.
+
+ ## Usage: search for the picture shown below which fits your needs, get into the code, download the code and adapt for your needs(e.g. change the value and color, make the generated figure in pdf format)
+
+ """
 
 PAPERS_DIR = './papers'
 
@@ -31,7 +35,7 @@ HEADER = "| Figure | Code Source | Paper |\n|  ----  | ----  | ----  |"
 ROWS = []
 for plot_info in all_plots:
     ROWS.append(
-        """| <a href="{}">  <img src="{}"  width="340" /></a> | [code]({}) | {} |""".format(plot_info['figure_path'],
+        """| <a href="{}">  <img src="{}"  width="170" /></a> | [code]({}) | {} |""".format(plot_info['figure_path'],
                                                                                             plot_info['figure_path'],
                                                                                             plot_info['code_path'],
                                                                                             plot_info['paper']))
