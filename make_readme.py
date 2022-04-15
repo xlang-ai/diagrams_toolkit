@@ -5,7 +5,8 @@ URL = "https://github.com/HKUNLP/diagrams_toolkit"
 README_STR = """# diagrams_toolkit
  Source code for diagrams in the paper of HKU NLPers.
 
- ## Usage: search for the picture shown below which fits your needs, get into the code, download the code and adapt for your needs(e.g. change the value and color, make the generated figure in pdf format)
+ ## Usage: 
+ Search for the picture shown below which fits your needs, get into the code, download the code and adapt for your needs(e.g. change the value and color, make the generated figure in pdf format)
 
  """
 
