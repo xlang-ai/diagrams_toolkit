@@ -2,9 +2,9 @@
 @Author: Lin Zheng
 @Editor: Tianbao Xie
 """
+import os
 import matplotlib.pyplot as plt
 import torch
-import os
 import seaborn as sns
 
 current_path = os.path.abspath(__file__)
@@ -12,12 +12,13 @@ father_path = os.path.abspath(os.path.dirname(current_path) + os.path.sep + ".")
 
 
 def plot():
+    """generate LM plots"""
     # Write the relative path from the name of this file
     relative_save_path = "fig2.png"
 
     save_path = os.path.join(father_path, relative_save_path)
     sns.set_style("darkgrid")
-    """generate LM plots"""
+
     path = father_path
     sns.set(font_scale=7.)
     loaded_dict = torch.load(os.path.join(path, 'attn_head'))

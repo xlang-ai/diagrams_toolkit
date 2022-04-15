@@ -1,5 +1,6 @@
 import os
 import importlib
+import matplotlib.pyplot as plt
 
 URL = "https://github.com/HKUNLP/diagrams_toolkit"
 README_STR = """# diagrams_toolkit
@@ -23,6 +24,7 @@ for paper_dir in os.listdir(PAPERS_DIR):
         if plot_dir.endswith(".py"):
             # For python, call plot function and get the fig/table path.
             figure_path = importlib.import_module("papers.{}.{}".format(paper_dir, plot_dir.split('.')[0])).plot()
+            plt.close()  # CLose the plt to avoid affecting next picture.
             all_plots.append({"figure_path": "{}/blob/main/papers/{}/{}".format(URL, paper_dir, figure_path),
                               "code_path": "{}/blob/main/papers/{}/{}".format(URL, paper_dir, plot_dir),
                               "paper": paper_dir})

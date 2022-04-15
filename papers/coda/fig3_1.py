@@ -2,8 +2,9 @@
 @Author: Lin Zheng
 @Editor: Tianbao Xie
 """
-import matplotlib.pyplot as plt
+
 import os
+import matplotlib.pyplot as plt
 import seaborn as sns
 
 current_path = os.path.abspath(__file__)
@@ -11,6 +12,7 @@ father_path = os.path.abspath(os.path.dirname(current_path) + os.path.sep + ".")
 
 
 def plot():
+
     # Write the relative path from the name of this file
     relative_save_path = "fig3_1.png"
 
@@ -30,5 +32,6 @@ def plot():
     plt.ylabel("BLEU", **csfont)
     plt.legend(fontsize=csfont['fontsize'])
     plt.savefig(save_path, format='png', bbox_inches='tight', pad_inches=0)
+    plt.clf()
 
     return relative_save_path
