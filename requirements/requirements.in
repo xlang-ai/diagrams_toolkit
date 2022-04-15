@@ -11,6 +11,6 @@ pre-commit
 scipy
 seaborn
 sphinx
-torch==1.7.0
+torch==1.8.2
 
 --no-binary shapely
